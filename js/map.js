@@ -4,7 +4,7 @@ var feature;
 function load_map() {
 	map = new L.Map('map', {zoomControl: true});
 
-	var osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+	var osmUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
 		osmAttribution = 'Map data &copy; 2012 <a href="http://openstreetmap.org">OpenStreetMap</a> contributors',
 		osm = new L.TileLayer(osmUrl, {maxZoom: 18, attribution: osmAttribution});
 
@@ -35,7 +35,7 @@ function chooseAddr(lat1, lng1, lat2, lng2, osm_type) {
 function addr_search() {
     var inp = document.getElementById("addr");
 
-    $.getJSON('http://nominatim.openstreetmap.org/search?format=json&limit=5&q=' + inp.value, function(data) {
+    $.getJSON('https://nominatim.openstreetmap.org/search?format=json&limit=5&q=' + inp.value, function(data) {
         var items = [];
 
         $.each(data, function(key, val) {
